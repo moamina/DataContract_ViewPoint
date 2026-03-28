@@ -1,0 +1,67 @@
+contract_id: du1ap5xi8
+scope: node
+bindsTo: ph0wwdgat
+version: '1.0'
+policy: enforce
+clauses:
+  - id: gpb79ah84
+    type: Schema
+    stage: store
+    severity: critical
+    requiredFields: event_date, subscriber_id, session_id, bytes_down
+  - id: 8wtqpjkj4
+    type: Constraint
+    stage: store
+    severity: critical
+    rule: unique
+    column: session_id
+  - id: mlmrxvyly
+    type: Constraint
+    stage: store
+    severity: warn
+    rule: session_id
+    column: partition_exists
+    value: daily
+
+---
+contract_id: n9qo6up71
+scope: node
+bindsTo: s17ygfndu
+version: '1.0'
+policy: enforce
+clauses:
+  - id: r5tvec4h3
+    type: SLO
+    stage: serve
+    severity: critical
+    metric: freshness_minutes
+    min: '0'
+    max: '15'
+
+---
+contract_id: zm2tay4tq
+scope: node
+bindsTo: feiqmhzn6
+version: '1.0'
+policy: enforce
+clauses:
+  - id: my14usvg5
+    type: SLO
+    stage: serve
+    severity: critical
+    min: '0'
+    max: '15'
+
+---
+contract_id: oiyzexdtk
+scope: node
+bindsTo: id2bzahh6
+version: '1.0'
+policy: enforce
+clauses:
+  - id: 182et4nu7
+    type: SLO
+    stage: serve
+    severity: critical
+    min: '0'
+    max: '15'

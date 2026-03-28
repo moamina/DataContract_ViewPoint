@@ -1,0 +1,68 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' ---------- Core ownership ----------
+class Team {
+  +name: String
+  +contact: String
+}
+
+' ---------- Architecture elements ----------
+abstract class ArchElement {
+  +id: String
+  +name: String
+  +criticality: String
+}
+
+class DataNode {
+  +nodeType: String  ' Source/Ingestion/Processing/Storage/Serving
+}
+
+class DataFlow {
+  +flowType: String  ' stream/batch
+  +protocol: String
+}
+
+ArchElement <|-- DataNode
+ArchElement <|-- DataFlow
+
+Team "1" <-- "0..*" DataNode : owner
+
+DataFlow "1" --> "1" DataNode : from
+DataFlow "1" --> "1" DataNode : to
+
+' ---------- Contracts as first-class ----------
+class Contract {
+  +id: String
+  +version: String
+  +policy: String   ' enforce/warn/monitor
+}
+
+class Clause {
+  +id: String
+  +type: String     ' schema/constraint/SLO/compatibility
+  +expr: String     ' e.g., required fields, thresholds, bounds
+  +severity: String
+}
+
+Contract "1" --> "1" ArchElement : bindsTo
+Contract "1" o-- "1..*" Clause : contains
+
+' ---------- Runtime conformance evidence ----------
+class Evidence {
+  +timestamp: String
+  +timeWindow: String
+  +status: String     ' pass/fail
+  +observedValue: String
+}
+
+Evidence "0..*" --> "1" Clause : validates
+Evidence "0..*" --> "1" ArchElement : observedOn
+
+note right of Contract
+Contracts bind to BOTH:
+- DataNode (component guarantee)
+- DataFlow (connector/interface obligation)
+end note
+
+@enduml

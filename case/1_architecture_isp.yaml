@@ -1,0 +1,163 @@
+architecture_id: generated_arch_1774686512013
+nodes:
+  - id: dl2glye3y
+    name: N1-UsageEventsProducer
+    type: Source
+    owner: NetworkDomainTeam
+    criticality: high
+    assetRef: ''
+    format: ''
+    keys: ''
+    partitioning: ''
+    freshnessTargetMinutes: 0
+  - id: dkrti04c9
+    name: N5-UsageEnrichmentJob
+    type: Processing
+    criticality: high
+    assetRef: flink:usage-enrichment
+    format: ''
+    keys: ''
+    partitioning: ''
+    freshnessTargetMinutes: 0
+  - id: m37sx4yq5
+    name: N2-UsageEventsTopic
+    type: Ingestion
+    owner: PlatformTeam
+    criticality: high
+    assetRef: kafka:usage.events.v1
+    format: ''
+    keys: ''
+    partitioning: ''
+    freshnessTargetMinutes: 0
+  - id: v9mr3jaa3
+    name: N3-SubscriberRefTable
+    type: Storage
+    owner: CRMTeam
+    criticality: high
+    assetRef: ''
+    format: ''
+    keys: ''
+    partitioning: ''
+    freshnessTargetMinutes: 0
+  - id: oagsav95b
+    name: N4-PlanRefTable
+    type: Storage
+    owner: CRMTeam
+    criticality: med
+    assetRef: warehouse:dim_plan
+    format: ''
+    keys: ''
+    partitioning: ''
+    freshnessTargetMinutes: 0
+  - id: ph0wwdgat
+    name: N6-UsageDataProductFacts
+    type: Storage
+    criticality: med
+    assetRef: warehouse:dp_usage_facts
+    format: ''
+    keys: ''
+    partitioning: ''
+    freshnessTargetMinutes: 0
+  - id: s17ygfndu
+    name: N7-BillingUsageExport
+    type: Serving
+    owner: BillingTeam
+    criticality: high
+    assetRef: warehouse:view_billing_usage
+    format: ''
+    keys: ''
+    partitioning: ''
+    freshnessTargetMinutes: '15'
+  - id: feiqmhzn6
+    name: N8-RevenueAssuranceChecks
+    type: Serving
+    owner: RevenueAssuranceTeam
+    criticality: high
+    assetRef: warehouse:view_ra_usage_recon
+    format: ''
+    keys: ''
+    partitioning: ''
+    freshnessTargetMinutes: '30'
+  - id: id2bzahh6
+    name: N9-BIUsageDashboard
+    type: Serving
+    owner: BIUsageDashboard
+    criticality: med
+    assetRef: warehouse:view_bi_usage_kpis
+    format: ''
+    keys: ''
+    partitioning: ''
+    freshnessTargetMinutes: '60'
+flows:
+  - id: 5sbgz1zfc
+    name: Customer Sync
+    from: pp76vwqod
+    to: ct0imi693
+    flowType: stream
+    protocol: ''
+    cadence: ''
+    criticality: med
+  - id: rdomy6l9h
+    name: F1-ProducerToTopic
+    from: dl2glye3y
+    to: m37sx4yq5
+    flowType: stream
+    protocol: REST->Kafka
+    cadence: ''
+    criticality: high
+  - id: s207yxxz4
+    name: F2-TopicToEnrichment
+    from: m37sx4yq5
+    to: dkrti04c9
+    flowType: stream
+    protocol: Kafka
+    cadence: ''
+    criticality: high
+  - id: 53efoniqm
+    name: F3-SubscriberRefToEnrichment
+    from: v9mr3jaa3
+    to: dkrti04c9
+    flowType: batch
+    protocol: SQL
+    cadence: daily
+    criticality: high
+  - id: 6eu6duict
+    name: F4-PlanRefToEnrichment
+    from: oagsav95b
+    to: dkrti04c9
+    flowType: stream
+    protocol: SQL
+    cadence: daily
+    criticality: med
+  - id: v910v6tsp
+    name: F5-EnrichmentToFacts
+    from: dkrti04c9
+    to: ph0wwdgat
+    flowType: stream
+    protocol: Kafka->Warehouse
+    cadence: ''
+    criticality: med
+  - id: 9gj0n9s85
+    name: F6-FactsToBilling
+    from: ph0wwdgat
+    to: s17ygfndu
+    flowType: batch
+    protocol: SQL
+    cadence: hourly
+    criticality: med
+  - id: vz4gbwk5x
+    name: F7-FactsToRevenueAssurance
+    from: ph0wwdgat
+    to: feiqmhzn6
+    flowType: batch
+    protocol: SQL
+    cadence: hourly
+    criticality: high
+  - id: qqm13qhby
+    name: F8-FactsToBI
+    from: ph0wwdgat
+    to: id2bzahh6
+    flowType: batch
+    protocol: SQL
+    cadence: FactsToBI
+    criticality: med

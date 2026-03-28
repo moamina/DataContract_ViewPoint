@@ -1,0 +1,1040 @@
+{
+  "nodes": [
+    {
+      "id": "dl2glye3y",
+      "label": "N1-UsageEventsProducer",
+      "x": -491.00000000000017,
+      "y": -141.50000000000006,
+      "icon": {
+        "code": "",
+        "color": "#f59e0b"
+      }
+    },
+    {
+      "id": "dkrti04c9",
+      "label": "N5-UsageEnrichmentJob",
+      "x": 43.41176470588237,
+      "y": -101.89705882352945,
+      "icon": {
+        "code": "",
+        "color": "#ec4899"
+      }
+    },
+    {
+      "id": "m37sx4yq5",
+      "label": "N2-UsageEventsTopic",
+      "x": -226.70588235294125,
+      "y": -141.6911764705883,
+      "icon": {
+        "code": "",
+        "color": "#8b5cf6"
+      }
+    },
+    {
+      "id": "v9mr3jaa3",
+      "label": "N3-SubscriberRefTable",
+      "x": -67.5294117647059,
+      "y": -211.63235294117655,
+      "icon": {
+        "code": "",
+        "color": "#10b981"
+      }
+    },
+    {
+      "id": "oagsav95b",
+      "label": "N4-PlanRefTable",
+      "x": 142.29411764705887,
+      "y": -23.51470588235295,
+      "icon": {
+        "code": "",
+        "color": "#10b981"
+      }
+    },
+    {
+      "id": "ph0wwdgat",
+      "label": "N6-UsageDataProductFacts",
+      "x": 601.7352941176473,
+      "y": -70.54411764705884,
+      "icon": {
+        "code": "",
+        "color": "#10b981"
+      }
+    },
+    {
+      "id": "s17ygfndu",
+      "label": "N7-BillingUsageExport",
+      "x": 630.6764705882355,
+      "y": -334.6323529411766,
+      "icon": {
+        "code": "",
+        "color": "#3b82f6"
+      }
+    },
+    {
+      "id": "feiqmhzn6",
+      "label": "N8-RevenueAssuranceChecks",
+      "x": 659.6176470588238,
+      "y": -124.80882352941181,
+      "icon": {
+        "code": "",
+        "color": "#3b82f6"
+      }
+    },
+    {
+      "id": "id2bzahh6",
+      "label": "N9-BIUsageDashboard",
+      "x": 552.294117647059,
+      "y": 107.92647058823533,
+      "icon": {
+        "code": "",
+        "color": "#3b82f6"
+      }
+    },
+    {
+      "id": "47j4ox1pk",
+      "label": "NetworkDomainTeam",
+      "x": -575.2058823529413,
+      "y": -352.7205882352942,
+      "icon": {
+        "code": "",
+        "color": "#a8a29e"
+      }
+    },
+    {
+      "id": "k6rbg38ru",
+      "label": "PlatformTeam",
+      "x": -219.4705882352942,
+      "y": -144.10294117647064,
+      "icon": {
+        "code": "",
+        "color": "#a8a29e"
+      }
+    },
+    {
+      "id": "sre4iwfe9",
+      "label": "CRMTeam",
+      "x": -71.14705882352943,
+      "y": -388.89705882352956,
+      "icon": {
+        "code": "",
+        "color": "#a8a29e"
+      }
+    },
+    {
+      "id": "2gs8f1otk",
+      "label": "CRMTeam",
+      "x": -113.35294117647062,
+      "y": 413.0147058823531,
+      "icon": {
+        "code": "",
+        "color": "#a8a29e"
+      }
+    },
+    {
+      "id": "nb4bcg93h",
+      "label": "BillingTeam",
+      "x": 231.52941176470597,
+      "y": -423.86764705882365,
+      "icon": {
+        "code": "",
+        "color": "#a8a29e"
+      }
+    },
+    {
+      "id": "jsy93a1jc",
+      "label": "RevenueAssuranceTeam",
+      "x": 518.5294117647061,
+      "y": -124.80882352941181,
+      "icon": {
+        "code": "",
+        "color": "#a8a29e"
+      }
+    },
+    {
+      "id": "iwgir0l5g",
+      "label": "BIUsageDashboard",
+      "x": 253.23529411764713,
+      "y": 410.6029411764707,
+      "icon": {
+        "code": "",
+        "color": "#a8a29e"
+      }
+    },
+    {
+      "id": "du1ap5xi8",
+      "label": "Contract v1.0",
+      "x": 439,
+      "y": -152,
+      "icon": {
+        "code": "",
+        "color": "#facc15"
+      }
+    },
+    {
+      "id": "n9qo6up71",
+      "label": "Contract v1.0",
+      "x": 540,
+      "y": -428,
+      "icon": {
+        "code": "",
+        "color": "#facc15"
+      }
+    },
+    {
+      "id": "zm2tay4tq",
+      "label": "Contract v1.0",
+      "x": 681,
+      "y": 11,
+      "icon": {
+        "code": "",
+        "color": "#facc15"
+      }
+    },
+    {
+      "id": "oiyzexdtk",
+      "label": "Contract v1.0",
+      "x": 361,
+      "y": 154,
+      "icon": {
+        "code": "",
+        "color": "#facc15"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "4ci4ebtet",
+      "from": "jo84lyh20",
+      "to": "pp76vwqod",
+      "label": "owner",
+      "dashes": true,
+      "arrows": "to",
+      "color": {
+        "color": "#a8a29e"
+      },
+      "length": 120
+    },
+    {
+      "id": "5sbgz1zfc",
+      "from": "pp76vwqod",
+      "to": "ct0imi693",
+      "arrows": "to",
+      "dashes": [
+        5,
+        5
+      ],
+      "label": "Customer Sync\n📋 Contract v1.0",
+      "font": {
+        "background": "#facc15",
+        "color": "#0f172a",
+        "strokeWidth": 0,
+        "size": 12
+      }
+    },
+    {
+      "id": "passc2asl",
+      "from": "47j4ox1pk",
+      "to": "dl2glye3y",
+      "label": "owner",
+      "dashes": true,
+      "arrows": "to",
+      "color": {
+        "color": "#a8a29e"
+      },
+      "length": 120
+    },
+    {
+      "from": "dl2glye3y",
+      "to": "m37sx4yq5",
+      "id": "rdomy6l9h",
+      "label": "F1-ProducerToTopic",
+      "font": {
+        "align": "top"
+      },
+      "dashes": [
+        5,
+        5
+      ]
+    },
+    {
+      "id": "jnd964agl",
+      "from": "k6rbg38ru",
+      "to": "m37sx4yq5",
+      "label": "owner",
+      "dashes": true,
+      "arrows": "to",
+      "color": {
+        "color": "#a8a29e"
+      },
+      "length": 120
+    },
+    {
+      "id": "oom67bwhi",
+      "from": "sre4iwfe9",
+      "to": "v9mr3jaa3",
+      "label": "owner",
+      "dashes": true,
+      "arrows": "to",
+      "color": {
+        "color": "#a8a29e"
+      },
+      "length": 120
+    },
+    {
+      "id": "726r45tqa",
+      "from": "2gs8f1otk",
+      "to": "oagsav95b",
+      "label": "owner",
+      "dashes": true,
+      "arrows": "to",
+      "color": {
+        "color": "#a8a29e"
+      },
+      "length": 120
+    },
+    {
+      "id": "noukodilg",
+      "from": "x0t8o0yyy",
+      "to": "dkrti04c9",
+      "label": "owner",
+      "dashes": true,
+      "arrows": "to",
+      "color": {
+        "color": "#a8a29e"
+      },
+      "length": 120
+    },
+    {
+      "id": "ebe6wbfhj",
+      "from": "x0t8o0yyy",
+      "to": "ph0wwdgat",
+      "label": "owner",
+      "dashes": true,
+      "arrows": "to",
+      "color": {
+        "color": "#a8a29e"
+      },
+      "length": 120
+    },
+    {
+      "id": "yhbaqbglc",
+      "from": "nb4bcg93h",
+      "to": "s17ygfndu",
+      "label": "owner",
+      "dashes": true,
+      "arrows": "to",
+      "color": {
+        "color": "#a8a29e"
+      },
+      "length": 120
+    },
+    {
+      "id": "m6u69ylpv",
+      "from": "jsy93a1jc",
+      "to": "feiqmhzn6",
+      "label": "owner",
+      "dashes": true,
+      "arrows": "to",
+      "color": {
+        "color": "#a8a29e"
+      },
+      "length": 120
+    },
+    {
+      "id": "mtaqk6vqi",
+      "from": "iwgir0l5g",
+      "to": "id2bzahh6",
+      "label": "owner",
+      "dashes": true,
+      "arrows": "to",
+      "color": {
+        "color": "#a8a29e"
+      },
+      "length": 120
+    },
+    {
+      "from": "m37sx4yq5",
+      "to": "dkrti04c9",
+      "id": "s207yxxz4",
+      "label": "F2-TopicToEnrichment\n📋 Contract v1.0",
+      "font": {
+        "background": "#facc15",
+        "color": "#0f172a",
+        "strokeWidth": 0,
+        "size": 12
+      },
+      "dashes": [
+        5,
+        5
+      ]
+    },
+    {
+      "from": "v9mr3jaa3",
+      "to": "dkrti04c9",
+      "id": "53efoniqm",
+      "label": "F3-SubscriberRefToEnrichment\n📋 Contract v1.0",
+      "font": {
+        "background": "#facc15",
+        "color": "#0f172a",
+        "strokeWidth": 0,
+        "size": 12
+      },
+      "dashes": false
+    },
+    {
+      "from": "oagsav95b",
+      "to": "dkrti04c9",
+      "id": "6eu6duict",
+      "label": "F4-PlanRefToEnrichment",
+      "font": {
+        "align": "top"
+      },
+      "dashes": [
+        5,
+        5
+      ]
+    },
+    {
+      "from": "dkrti04c9",
+      "to": "ph0wwdgat",
+      "id": "v910v6tsp",
+      "label": "F5-EnrichmentToFacts",
+      "font": {
+        "align": "top"
+      },
+      "dashes": [
+        5,
+        5
+      ]
+    },
+    {
+      "from": "ph0wwdgat",
+      "to": "s17ygfndu",
+      "id": "9gj0n9s85",
+      "label": "F6-FactsToBilling\n📋 Contract v1.0",
+      "font": {
+        "background": "#facc15",
+        "color": "#0f172a",
+        "strokeWidth": 0,
+        "size": 12
+      },
+      "dashes": false
+    },
+    {
+      "from": "ph0wwdgat",
+      "to": "feiqmhzn6",
+      "id": "vz4gbwk5x",
+      "label": "F7-FactsToRevenueAssurance",
+      "font": {
+        "align": "top"
+      },
+      "dashes": false
+    },
+    {
+      "from": "ph0wwdgat",
+      "to": "id2bzahh6",
+      "id": "qqm13qhby",
+      "label": "F8-FactsToBI",
+      "font": {
+        "align": "top"
+      },
+      "dashes": false
+    },
+    {
+      "id": "gfus5nynn",
+      "from": "du1ap5xi8",
+      "to": "ph0wwdgat",
+      "dashes": true,
+      "arrows": "",
+      "color": {
+        "color": "#facc15"
+      },
+      "length": 80
+    },
+    {
+      "id": "nou3wb8m9",
+      "from": "n9qo6up71",
+      "to": "s17ygfndu",
+      "dashes": true,
+      "arrows": "",
+      "color": {
+        "color": "#facc15"
+      },
+      "length": 80
+    },
+    {
+      "id": "pdbuom2zm",
+      "from": "zm2tay4tq",
+      "to": "feiqmhzn6",
+      "dashes": true,
+      "arrows": "",
+      "color": {
+        "color": "#facc15"
+      },
+      "length": 80
+    },
+    {
+      "id": "ow7ijbhxi",
+      "from": "oiyzexdtk",
+      "to": "id2bzahh6",
+      "dashes": true,
+      "arrows": "",
+      "color": {
+        "color": "#facc15"
+      },
+      "length": 80
+    }
+  ],
+  "dataNodes": {
+    "dl2glye3y": {
+      "id": "dl2glye3y",
+      "name": "N1-UsageEventsProducer",
+      "criticality": "high",
+      "nodeType": "Source",
+      "updateMode": "batch",
+      "assetRef": "",
+      "format": "",
+      "keys": "",
+      "partitioning": "",
+      "freshnessTargetMin": 0,
+      "owner": "47j4ox1pk"
+    },
+    "dkrti04c9": {
+      "id": "dkrti04c9",
+      "name": "N5-UsageEnrichmentJob",
+      "criticality": "high",
+      "nodeType": "Processing",
+      "updateMode": "batch",
+      "assetRef": "flink:usage-enrichment",
+      "format": "",
+      "keys": "",
+      "partitioning": "",
+      "freshnessTargetMin": 0,
+      "owner": "x0t8o0yyy"
+    },
+    "m37sx4yq5": {
+      "id": "m37sx4yq5",
+      "name": "N2-UsageEventsTopic",
+      "criticality": "high",
+      "nodeType": "Ingestion",
+      "updateMode": "batch",
+      "assetRef": "kafka:usage.events.v1",
+      "format": "",
+      "keys": "",
+      "partitioning": "",
+      "freshnessTargetMin": 0,
+      "owner": "k6rbg38ru"
+    },
+    "v9mr3jaa3": {
+      "id": "v9mr3jaa3",
+      "name": "N3-SubscriberRefTable",
+      "criticality": "high",
+      "nodeType": "Storage",
+      "updateMode": "batch",
+      "assetRef": "",
+      "format": "",
+      "keys": "",
+      "partitioning": "",
+      "freshnessTargetMin": 0,
+      "owner": "sre4iwfe9"
+    },
+    "oagsav95b": {
+      "id": "oagsav95b",
+      "name": "N4-PlanRefTable",
+      "criticality": "med",
+      "nodeType": "Storage",
+      "updateMode": "batch",
+      "assetRef": "warehouse:dim_plan",
+      "format": "",
+      "keys": "",
+      "partitioning": "",
+      "freshnessTargetMin": 0,
+      "owner": "2gs8f1otk"
+    },
+    "ph0wwdgat": {
+      "id": "ph0wwdgat",
+      "name": "N6-UsageDataProductFacts",
+      "criticality": "med",
+      "nodeType": "Storage",
+      "updateMode": "batch",
+      "assetRef": "warehouse:dp_usage_facts",
+      "format": "",
+      "keys": "",
+      "partitioning": "",
+      "freshnessTargetMin": 0,
+      "owner": "x0t8o0yyy"
+    },
+    "s17ygfndu": {
+      "id": "s17ygfndu",
+      "name": "N7-BillingUsageExport",
+      "criticality": "high",
+      "nodeType": "Serving",
+      "updateMode": "batch",
+      "assetRef": "warehouse:view_billing_usage",
+      "format": "",
+      "keys": "",
+      "partitioning": "",
+      "freshnessTargetMin": "15",
+      "owner": "nb4bcg93h"
+    },
+    "feiqmhzn6": {
+      "id": "feiqmhzn6",
+      "name": "N8-RevenueAssuranceChecks",
+      "criticality": "high",
+      "nodeType": "Serving",
+      "updateMode": "batch",
+      "assetRef": "warehouse:view_ra_usage_recon",
+      "format": "",
+      "keys": "",
+      "partitioning": "",
+      "freshnessTargetMin": "30",
+      "owner": "jsy93a1jc"
+    },
+    "id2bzahh6": {
+      "id": "id2bzahh6",
+      "name": "N9-BIUsageDashboard",
+      "criticality": "med",
+      "nodeType": "Serving",
+      "updateMode": "batch",
+      "assetRef": "warehouse:view_bi_usage_kpis",
+      "format": "",
+      "keys": "",
+      "partitioning": "",
+      "freshnessTargetMin": "60",
+      "owner": "iwgir0l5g"
+    }
+  },
+  "dataFlows": {
+    "5sbgz1zfc": {
+      "id": "5sbgz1zfc",
+      "name": "Customer Sync",
+      "criticality": "med",
+      "from": "pp76vwqod",
+      "to": "ct0imi693",
+      "flowType": "stream",
+      "protocol": "",
+      "cadenceOrWindow": "",
+      "serialization": "",
+      "deliverySemantics": "",
+      "timeSemantics": "",
+      "uses": []
+    },
+    "rdomy6l9h": {
+      "id": "rdomy6l9h",
+      "name": "F1-ProducerToTopic",
+      "criticality": "high",
+      "from": "dl2glye3y",
+      "to": "m37sx4yq5",
+      "flowType": "stream",
+      "protocol": "REST->Kafka",
+      "cadenceOrWindow": "",
+      "serialization": "",
+      "deliverySemantics": "",
+      "timeSemantics": "",
+      "uses": []
+    },
+    "s207yxxz4": {
+      "id": "s207yxxz4",
+      "name": "F2-TopicToEnrichment",
+      "criticality": "high",
+      "from": "m37sx4yq5",
+      "to": "dkrti04c9",
+      "flowType": "stream",
+      "protocol": "Kafka",
+      "cadenceOrWindow": "",
+      "serialization": "",
+      "deliverySemantics": "",
+      "timeSemantics": "",
+      "uses": []
+    },
+    "53efoniqm": {
+      "id": "53efoniqm",
+      "name": "F3-SubscriberRefToEnrichment",
+      "criticality": "high",
+      "from": "v9mr3jaa3",
+      "to": "dkrti04c9",
+      "flowType": "batch",
+      "protocol": "SQL",
+      "cadenceOrWindow": "daily",
+      "serialization": "",
+      "deliverySemantics": "",
+      "timeSemantics": "",
+      "uses": []
+    },
+    "6eu6duict": {
+      "id": "6eu6duict",
+      "name": "F4-PlanRefToEnrichment",
+      "criticality": "med",
+      "from": "oagsav95b",
+      "to": "dkrti04c9",
+      "flowType": "stream",
+      "protocol": "SQL",
+      "cadenceOrWindow": "daily",
+      "serialization": "",
+      "deliverySemantics": "",
+      "timeSemantics": "",
+      "uses": []
+    },
+    "v910v6tsp": {
+      "id": "v910v6tsp",
+      "name": "F5-EnrichmentToFacts",
+      "criticality": "med",
+      "from": "dkrti04c9",
+      "to": "ph0wwdgat",
+      "flowType": "stream",
+      "protocol": "Kafka->Warehouse",
+      "cadenceOrWindow": "",
+      "serialization": "",
+      "deliverySemantics": "",
+      "timeSemantics": "",
+      "uses": []
+    },
+    "9gj0n9s85": {
+      "id": "9gj0n9s85",
+      "name": "F6-FactsToBilling",
+      "criticality": "med",
+      "from": "ph0wwdgat",
+      "to": "s17ygfndu",
+      "flowType": "batch",
+      "protocol": "SQL",
+      "cadenceOrWindow": "hourly",
+      "serialization": "",
+      "deliverySemantics": "",
+      "timeSemantics": "",
+      "uses": []
+    },
+    "vz4gbwk5x": {
+      "id": "vz4gbwk5x",
+      "name": "F7-FactsToRevenueAssurance",
+      "criticality": "high",
+      "from": "ph0wwdgat",
+      "to": "feiqmhzn6",
+      "flowType": "batch",
+      "protocol": "SQL",
+      "cadenceOrWindow": "hourly",
+      "serialization": "",
+      "deliverySemantics": "",
+      "timeSemantics": "",
+      "uses": []
+    },
+    "qqm13qhby": {
+      "id": "qqm13qhby",
+      "name": "F8-FactsToBI",
+      "criticality": "med",
+      "from": "ph0wwdgat",
+      "to": "id2bzahh6",
+      "flowType": "batch",
+      "protocol": "SQL",
+      "cadenceOrWindow": "FactsToBI",
+      "serialization": "",
+      "deliverySemantics": "",
+      "timeSemantics": "",
+      "uses": []
+    }
+  },
+  "teams": {
+    "47j4ox1pk": {
+      "id": "47j4ox1pk",
+      "name": "NetworkDomainTeam",
+      "contact": ""
+    },
+    "k6rbg38ru": {
+      "id": "k6rbg38ru",
+      "name": "PlatformTeam",
+      "contact": ""
+    },
+    "sre4iwfe9": {
+      "id": "sre4iwfe9",
+      "name": "CRMTeam",
+      "contact": ""
+    },
+    "2gs8f1otk": {
+      "id": "2gs8f1otk",
+      "name": "CRMTeam",
+      "contact": ""
+    },
+    "nb4bcg93h": {
+      "id": "nb4bcg93h",
+      "name": "BillingTeam",
+      "contact": ""
+    },
+    "jsy93a1jc": {
+      "id": "jsy93a1jc",
+      "name": "RevenueAssuranceTeam",
+      "contact": ""
+    },
+    "iwgir0l5g": {
+      "id": "iwgir0l5g",
+      "name": "BIUsageDashboard",
+      "contact": ""
+    }
+  },
+  "contracts": {
+    "rej49ckgy": {
+      "id": "rej49ckgy",
+      "version": "1.0",
+      "policy": "enforce",
+      "status": "draft",
+      "clauses": [
+        {
+          "id": "9lshc00ul",
+          "type": "Schema",
+          "stage": "ingest",
+          "severity": "critical",
+          "rationale": "Need strict types",
+          "interfaceRef": "schema_v1",
+          "requiredFields": "id,name",
+          "typeRules": "string"
+        }
+      ],
+      "owner": null,
+      "bindsTo": "5sbgz1zfc"
+    },
+    "qh61lkxug": {
+      "id": "qh61lkxug",
+      "version": "1.0",
+      "policy": "enforce",
+      "status": "draft",
+      "clauses": [
+        {
+          "id": "2u0wikfmb",
+          "type": "Schema",
+          "stage": "ingest",
+          "severity": "critical",
+          "rationale": "",
+          "interfaceRef": "",
+          "requiredFields": "subscriber_id, event_time, session_id, bytes_down",
+          "typeRules": ""
+        },
+        {
+          "id": "d29de874z",
+          "type": "Compatibility",
+          "stage": "ingest",
+          "severity": "critical",
+          "rationale": "",
+          "compatPolicy": "backward",
+          "allowedChanges": ""
+        },
+        {
+          "id": "pkyjhzv5d",
+          "type": "SLO",
+          "stage": "process",
+          "severity": "critical",
+          "rationale": "",
+          "metric": "lateness_p95_seconds",
+          "min": "0",
+          "max": "120",
+          "window": "5m"
+        },
+        {
+          "id": "9qa7jxp88",
+          "type": "SLO",
+          "stage": "process",
+          "severity": "critical",
+          "rationale": "",
+          "metric": "duplicate_rate",
+          "min": "0",
+          "max": "0.005",
+          "window": "5m"
+        }
+      ],
+      "owner": null,
+      "bindsTo": "s207yxxz4"
+    },
+    "t9dv7ooxi": {
+      "id": "t9dv7ooxi",
+      "version": "1.0",
+      "policy": "warn",
+      "status": "draft",
+      "clauses": [
+        {
+          "id": "eryt0mgye",
+          "type": "Constraint",
+          "stage": "process",
+          "severity": "critical",
+          "rationale": "",
+          "rule": "not_null",
+          "column": "subscriber_id",
+          "value": "",
+          "window": ""
+        },
+        {
+          "id": "9bc53mgdk",
+          "type": "Constraint",
+          "stage": "process",
+          "severity": "critical",
+          "rationale": "",
+          "rule": "unique",
+          "column": "subscriber_id",
+          "value": "",
+          "window": ""
+        },
+        {
+          "id": "wzko3hvbd",
+          "type": "SLO",
+          "stage": "store",
+          "severity": "warn",
+          "rationale": "",
+          "metric": "freshness_minutes",
+          "min": "0",
+          "max": "1440",
+          "window": ""
+        }
+      ],
+      "owner": null,
+      "bindsTo": "53efoniqm"
+    },
+    "nguujz2dn": {
+      "id": "nguujz2dn",
+      "version": "C_F6_FactsToBilling",
+      "policy": "enforce",
+      "status": "draft",
+      "clauses": [
+        {
+          "id": "fvn99824x",
+          "type": "Schema",
+          "stage": "serve",
+          "severity": "critical",
+          "rationale": "",
+          "interfaceRef": "",
+          "requiredFields": "billing_date, subscriber_id, billed_bytes_down",
+          "typeRules": ""
+        },
+        {
+          "id": "4wgtpcup9",
+          "type": "Compatibility",
+          "stage": "serve",
+          "severity": "warn",
+          "rationale": "",
+          "compatPolicy": "backward",
+          "allowedChanges": ""
+        },
+        {
+          "id": "1zmkdedd1",
+          "type": "Constraint",
+          "stage": "serve",
+          "severity": "critical",
+          "rationale": "",
+          "rule": "min",
+          "column": "billed_bytes_down",
+          "value": "0",
+          "window": ""
+        }
+      ],
+      "owner": null,
+      "bindsTo": "9gj0n9s85"
+    },
+    "du1ap5xi8": {
+      "id": "du1ap5xi8",
+      "version": "1.0",
+      "policy": "enforce",
+      "status": "draft",
+      "clauses": [
+        {
+          "id": "gpb79ah84",
+          "type": "Schema",
+          "stage": "store",
+          "severity": "critical",
+          "rationale": "",
+          "interfaceRef": "",
+          "requiredFields": "event_date, subscriber_id, session_id, bytes_down",
+          "typeRules": ""
+        },
+        {
+          "id": "8wtqpjkj4",
+          "type": "Constraint",
+          "stage": "store",
+          "severity": "critical",
+          "rationale": "",
+          "rule": "unique",
+          "column": "session_id",
+          "value": "",
+          "window": ""
+        },
+        {
+          "id": "mlmrxvyly",
+          "type": "Constraint",
+          "stage": "store",
+          "severity": "warn",
+          "rationale": "",
+          "rule": "session_id",
+          "column": "partition_exists",
+          "value": "daily",
+          "window": ""
+        }
+      ],
+      "owner": null,
+      "bindsTo": "ph0wwdgat"
+    },
+    "n9qo6up71": {
+      "id": "n9qo6up71",
+      "version": "1.0",
+      "policy": "enforce",
+      "status": "draft",
+      "clauses": [
+        {
+          "id": "r5tvec4h3",
+          "type": "SLO",
+          "stage": "serve",
+          "severity": "critical",
+          "rationale": "",
+          "metric": "freshness_minutes",
+          "min": "0",
+          "max": "15",
+          "window": ""
+        }
+      ],
+      "owner": null,
+      "bindsTo": "s17ygfndu"
+    },
+    "zm2tay4tq": {
+      "id": "zm2tay4tq",
+      "version": "1.0",
+      "policy": "enforce",
+      "status": "draft",
+      "clauses": [
+        {
+          "id": "my14usvg5",
+          "type": "SLO",
+          "stage": "serve",
+          "severity": "critical",
+          "rationale": "",
+          "metric": "",
+          "min": "0",
+          "max": "15",
+          "window": ""
+        }
+      ],
+      "owner": null,
+      "bindsTo": "feiqmhzn6"
+    },
+    "oiyzexdtk": {
+      "id": "oiyzexdtk",
+      "version": "1.0",
+      "policy": "enforce",
+      "status": "draft",
+      "clauses": [
+        {
+          "id": "182et4nu7",
+          "type": "SLO",
+          "stage": "serve",
+          "severity": "critical",
+          "rationale": "",
+          "metric": "",
+          "min": "0",
+          "max": "15",
+          "window": ""
+        }
+      ],
+      "owner": null,
+      "bindsTo": "id2bzahh6"
+    }
+  },
+  "evidences": {},
+  "changeSets": {},
+  "impactReports": {},
+  "dataProducts": {},
+  "dataInterfaces": {},
+  "validationRuns": {},
+  "violations": {}
+}

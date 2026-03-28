@@ -1,0 +1,100 @@
+contract_id: rej49ckgy
+scope: flow
+bindsTo: 5sbgz1zfc
+version: '1.0'
+policy: enforce
+clauses:
+  - id: 9lshc00ul
+    type: Schema
+    stage: ingest
+    severity: critical
+    rationale: Need strict types
+    interfaceRef: schema_v1
+    requiredFields: id,name
+    typeRules: string
+
+---
+contract_id: qh61lkxug
+scope: flow
+bindsTo: s207yxxz4
+version: '1.0'
+policy: enforce
+clauses:
+  - id: 2u0wikfmb
+    type: Schema
+    stage: ingest
+    severity: critical
+    requiredFields: subscriber_id, event_time, session_id, bytes_down
+  - id: d29de874z
+    type: Compatibility
+    stage: ingest
+    severity: critical
+    compatPolicy: backward
+  - id: pkyjhzv5d
+    type: SLO
+    stage: process
+    severity: critical
+    metric: lateness_p95_seconds
+    min: '0'
+    max: '120'
+    window: 5m
+  - id: 9qa7jxp88
+    type: SLO
+    stage: process
+    severity: critical
+    metric: duplicate_rate
+    min: '0'
+    max: '0.005'
+    window: 5m
+
+---
+contract_id: t9dv7ooxi
+scope: flow
+bindsTo: 53efoniqm
+version: '1.0'
+policy: warn
+clauses:
+  - id: eryt0mgye
+    type: Constraint
+    stage: process
+    severity: critical
+    rule: not_null
+    column: subscriber_id
+  - id: 9bc53mgdk
+    type: Constraint
+    stage: process
+    severity: critical
+    rule: unique
+    column: subscriber_id
+  - id: wzko3hvbd
+    type: SLO
+    stage: store
+    severity: warn
+    metric: freshness_minutes
+    min: '0'
+    max: '1440'
+
+---
+contract_id: nguujz2dn
+scope: flow
+bindsTo: 9gj0n9s85
+version: C_F6_FactsToBilling
+policy: enforce
+clauses:
+  - id: fvn99824x
+    type: Schema
+    stage: serve
+    severity: critical
+    requiredFields: billing_date, subscriber_id, billed_bytes_down
+  - id: 4wgtpcup9
+    type: Compatibility
+    stage: serve
+    severity: warn
+    compatPolicy: backward
+  - id: 1zmkdedd1
+    type: Constraint
+    stage: serve
+    severity: critical
+    rule: min
+    column: billed_bytes_down
+    value: '0'

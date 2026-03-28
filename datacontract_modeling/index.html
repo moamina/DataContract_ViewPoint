@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Contract Modeling Tool</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- vis-network -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #error-box { display: none; position: fixed; top: 0; left: 0; width: 100vw; background: #dc2626; color: white; padding: 20px; z-index: 10000; font-family: sans-serif; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div id="error-box"></div>
+    <script>
+        window.onerror = function(msg, url, line, col, error) {
+            if (msg.indexOf('ResizeObserver') !== -1) return;
+            var box = document.getElementById('error-box');
+            box.style.display = 'block';
+            box.innerHTML += '<p><strong>JS Error:</strong> ' + msg + '<br>Line: ' + line + '</p>';
+        };
+    </script>
+    <div id="container">
+        <!-- Sidebar: Palette -->
+        <aside id="palette">
+            <h2><i class="fa-solid fa-shapes"></i> Elements</h2>
+            <input type="text" id="palette-search" placeholder="Search elements..." autocomplete="off">
+            <div class="palette-item" draggable="true" data-type="DataNode" data-nodetype="Source">
+                <i class="fa-solid fa-database"></i> Source
+            </div>
+            <div class="palette-item" draggable="true" data-type="DataNode" data-nodetype="Ingestion">
+                <i style="color: #8b5cf6;" class="fa-solid fa-inbox"></i> Ingestion
+            </div>
+            <div class="palette-item" draggable="true" data-type="DataNode" data-nodetype="Processing">
+                <i class="fa-solid fa-gears"></i> Processing
+            </div>
+            <div class="palette-item" draggable="true" data-type="DataNode" data-nodetype="Storage">
+                <i class="fa-solid fa-server"></i> Storage
+            </div>
+            <div class="palette-item" draggable="true" data-type="DataNode" data-nodetype="Serving">
+                <i class="fa-solid fa-cloud"></i> Serving
+            </div>
+            <hr>
+            <div class="palette-item" draggable="true" data-type="Team">
+                <i class="fa-solid fa-users"></i> Team
+            </div>
+            <div class="palette-item" draggable="true" data-type="DataProduct">
+                <i style="color: #06b6d4;" class="fa-solid fa-box-open"></i> Data Product
+            </div>
+            <hr>
+            <div class="palette-item" draggable="true" data-type="Contract">
+                <i class="fa-solid fa-file-lines"></i> Contract
+            </div>
+            <div class="palette-item" draggable="true" data-type="DataInterface">
+                <i style="color: #8b5cf6;" class="fa-solid fa-plug"></i> Data Interface
+            </div>
+            <hr>
+            <div class="palette-item" draggable="true" data-type="ValidationRun">
+                <i style="color: #0ea5e9;" class="fa-solid fa-vial"></i> Validation Run
+            </div>
+            <div class="palette-item" draggable="true" data-type="Evidence">
+                <i style="color: #10b981;" class="fa-solid fa-circle-check"></i> Evidence
+            </div>
+            <div class="palette-item" draggable="true" data-type="Violation">
+                <i style="color: #dc2626;" class="fa-solid fa-triangle-exclamation"></i> Violation
+            </div>
+            <hr>
+            <div class="palette-item" draggable="true" data-type="ChangeSet">
+                <i style="color: #ea580c;" class="fa-solid fa-code-branch"></i> ChangeSet
+            </div>
+            <div class="palette-item" draggable="true" data-type="ImpactReport">
+                <i style="color: #ef4444;" class="fa-solid fa-file-waveform"></i> Impact Report
+            </div>
+        </aside>
+
+        <!-- Main Canvas -->
+        <main>
+            <header>
+                <h1>Data Contract Architect</h1>
+                <div class="actions">
+                    <button id="btn-draw" class="btn-primary" style="background: #eab308; border-color: #ca8a04; color: #000;"><i class="fa-solid fa-link"></i> Connect</button>
+                    <button id="btn-export-img"><i class="fa-solid fa-camera"></i> Snapshot</button>
+                    <input type="file" id="file-import" accept=".json,.yaml,.yml" multiple style="display:none;">
+                    <button id="btn-import"><i class="fa-solid fa-upload"></i> Import</button>
+                    <button id="btn-export-json"><i class="fa-solid fa-code"></i> JSON</button>
+                    <button id="btn-export-yaml"><i class="fa-solid fa-file-code"></i> YAML</button>
+                    <button id="btn-clear"><i class="fa-solid fa-trash"></i> Clear</button>
+                </div>
+            </header>
+            <div id="network-container"></div>
+            <div id="status-bar">
+                <span id="status-text">Ready. Drag elements onto the canvas or connect nodes.</span>
+            </div>
+        </main>
+
+        <!-- Properties Panel -->
+        <aside id="properties" class="hidden">
+            <h2>Properties</h2>
+            <div id="properties-content">
+                <!-- Dynamically filled by app.js -->
+            </div>
+        </aside>
+    </div>
+
+    <!-- Modal for Clauses -->
+    <div id="clause-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Add Clause</h3>
+            <form id="clause-form">
+                <!-- dynamic fields -->
+            </form>
+        </div>
+    </div>
+
+    <script src="model.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

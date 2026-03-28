@@ -1,0 +1,90 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+'========================
+' Core actors / ownership
+'========================
+class Team {
+  +name: String
+}
+
+'========================
+' Architecture backbone
+'========================
+abstract class ArchElement {
+  +id: String
+  +name: String
+  +criticality: {low|med|high}
+}
+
+class DataNode {
+  +type: {Source|Ingestion|Processing|Storage|Serving}
+}
+
+class DataFlow {
+  +type: {stream|batch}
+}
+
+ArchElement <|-- DataNode
+ArchElement <|-- DataFlow
+
+Team "1" <-- "0..*" DataNode : owner
+DataFlow "1" --> "1" DataNode : from
+DataFlow "1" --> "1" DataNode : to
+
+'========================
+' Contracts as first-class
+'========================
+class Contract {
+  +id: String
+  +version: String
+  +policy: {enforce|warn|monitor}
+}
+
+class Clause {
+  +type: {Schema|Constraint|SLO|Compatibility}
+  +expr: String    ' thresholds / required fields / policy
+  +stage: {ingest|process|store|serve}
+  +severity: {info|warn|critical}
+}
+
+Team "1" <-- "0..*" Contract : owner
+Contract "1" --> "1" ArchElement : bindsTo
+Contract "1" o-- "1..*" Clause : contains
+
+'========================
+' Conformance evidence
+'========================
+class Evidence {
+  +timeWindow: String
+  +status: {pass|fail}
+  +observedValue: String
+}
+
+Evidence "0..*" --> "1" Clause : validates
+Evidence "0..*" --> "1" ArchElement : observedOn
+
+'========================
+' Evolution & impact
+'========================
+class ChangeSet {
+  +fromV: String
+  +toV: String
+  +breaking: Boolean
+}
+
+class ImpactReport {
+  +notes: String
+}
+
+ChangeSet "1" --> "1" Contract : diffOf
+ImpactReport "1" --> "1" ChangeSet : analyzes
+ImpactReport "1" --> "0..*" ArchElement : impacted
+
+note right of Contract
+First-class: binds to BOTH
+DataNode (component guarantee)
+and DataFlow (connector/interface obligation).
+end note
+
+@enduml

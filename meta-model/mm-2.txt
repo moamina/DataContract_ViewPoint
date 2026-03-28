@@ -1,0 +1,181 @@
+@startuml
+' =========================================================
+' Paper-friendly styling
+' =========================================================
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam padding 8
+skinparam nodesep 35
+skinparam ranksep 35
+left to right direction
+
+' =========================================================
+' ARCHITECTURE
+' =========================================================
+package "Architecture" as ARCH {
+  abstract class ArchElement {
+    +id: String
+    +name: String
+    +criticality: Criticality
+  }
+
+  class DataNode {
+    +nodeType: NodeType
+  }
+
+  class DataFlow {
+    +flowType: FlowType
+  }
+
+  ArchElement <|-- DataNode
+  ArchElement <|-- DataFlow
+
+  DataFlow "1" --> "1" DataNode : from
+  DataFlow "1" --> "1" DataNode : to
+}
+
+' =========================================================
+' GOVERNANCE
+' =========================================================
+package "Governance" as GOV {
+  class Team {
+    +name: String
+  }
+}
+GOV.Team "1" <-- "0..*" ARCH.DataNode : owner
+
+' =========================================================
+' CONTRACTS
+' =========================================================
+package "Contracts" as CONT {
+  class Contract {
+    +id: String
+    +version: String
+    +policy: Policy
+  }
+
+  class Clause {
+    +type: ClauseType
+    +expr: String
+    +stage: Stage
+    +severity: Severity
+  }
+
+  Contract "1" o-- "1..*" Clause : contains
+}
+GOV.Team "1" <-- "0..*" CONT.Contract : owner
+CONT.Contract "1" --> "1" ARCH.ArchElement : bindsTo
+
+note right of CONT.Contract
+First-class: binds to BOTH
+DataNode (component guarantee)
+and DataFlow (connector/interface obligation).
+end note
+
+' =========================================================
+' CONFORMANCE
+' =========================================================
+package "Conformance" as CONF {
+  class Evidence {
+    +timeWindow: String
+    +status: EvidenceStatus
+    +observedValue: String
+  }
+}
+CONF.Evidence "0..*" --> "1" CONT.Clause : validates
+CONF.Evidence "0..*" --> "1" ARCH.ArchElement : observedOn
+
+' =========================================================
+' EVOLUTION
+' =========================================================
+package "Evolution" as EVO {
+  class ChangeSet {
+    +fromV: String
+    +toV: String
+    +breaking: Boolean
+  }
+
+  class ImpactReport {
+    +notes: String
+  }
+
+  ChangeSet "1" --> "1" CONT.Contract : diffOf
+  ImpactReport "1" --> "1" ChangeSet : analyzes
+  ImpactReport "1" --> "0..*" ARCH.ArchElement : impacted
+}
+
+' =========================================================
+' ENUMS (placed at the BOTTOM; horizontally arranged)
+' =========================================================
+package "Enums" as EN {
+  together {
+    enum Criticality {
+      low
+      med
+      high
+    }
+
+    enum NodeType {
+      Source
+      Ingestion
+      Processing
+      Storage
+      Serving
+    }
+
+    enum FlowType {
+      stream
+      batch
+    }
+
+    enum Policy {
+      enforce
+      warn
+      monitor
+    }
+
+    enum ClauseType {
+      Schema
+      Constraint
+      SLO
+      Compatibility
+    }
+
+    enum Stage {
+      ingest
+      process
+      store
+      serve
+    }
+
+    enum Severity {
+      info
+      warn
+      critical
+    }
+
+    enum EvidenceStatus {
+      pass
+      fail
+    }
+  }
+
+  ' Force left-to-right ordering on one row
+  Criticality  -[hidden]-> NodeType
+  NodeType     -[hidden]-> FlowType
+  FlowType     -[hidden]-> Policy
+  Policy       -[hidden]-> ClauseType
+  ClauseType   -[hidden]-> Stage
+  Stage        -[hidden]-> Severity
+  Severity     -[hidden]-> EvidenceStatus
+}
+
+' ---- Layout anchors: push Enums to bottom + center-ish under core packages
+CONT -[hidden]down-> EN
+CONF -[hidden]down-> EN
+ARCH -[hidden]down-> EN
+EVO  -[hidden]down-> EN
+
+@enduml
